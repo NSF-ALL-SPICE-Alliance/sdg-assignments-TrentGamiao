@@ -77,7 +77,7 @@ vembedr::embed_url("https://www.youtube.com/watch?v=0FAQHfm2dsw")
 
 Here's where the magic happens! All of the content under this heading comes from the [Masters of Environmental Data Science Program at UC Santa Barbara, Bren School of Environmental Science & Management](https://ucsb-meds.github.io/) (my alma mater :) )
 
-
+ 
 
 
 #### Check for Git
