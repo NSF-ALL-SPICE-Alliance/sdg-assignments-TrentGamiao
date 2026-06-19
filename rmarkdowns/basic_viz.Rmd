@@ -243,4 +243,4 @@ Make a histogram for a different SDG score. Then, fill by region. In a couple of
 ggplot(sdr_data, aes(x = goal_11_score, fill = regions_used_for_the_sdr)) + geom_histogram(binwidth = 5, color="black")
 ```
 Interpretation:
-Most countries fall beween the 75-90 score range for SDG 11. We can see that countries in the OECD and LAC are on the higher end of the scores. While countries in teh Sub-Saharan Africa fall on the lower end of scores.
+Most countries fall beween the 75-90 score range for SDG 11. We can see that countries in the OECD and LAC are on the higher end of the scores. While countries in the Sub-Saharan Africa fall on the lower end of scores.
