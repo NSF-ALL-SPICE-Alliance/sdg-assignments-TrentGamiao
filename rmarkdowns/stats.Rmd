@@ -29,6 +29,7 @@ library(ggpubr)
 library(janitor)
 library(ggcorrplot)
 library(vembedr)
+library(plotly)
 ```
 
 
@@ -197,14 +198,17 @@ To circle back and reinforce how the linear regression (line drawn through our s
   - What does this look like on scatter plot?
   
 ```{r, warning=FALSE, message=FALSE}
-ggplot(sdr_data, aes(x = goal_12_score, 
-                     y = goal_9_score)) +
+linear_reg <- ggplot(sdr_data, aes(x = goal_4_score, 
+                     y = goal_7_score, label = country)) +
   geom_point() +
   geom_smooth() +
-  stat_cor() +
+  stat_cor() + # Bug: Problem printing coefficient and p-value
   theme_minimal() 
 
+ggplotly(linear_reg)
+
 ```
+
 
 ### <span style="color: red;">Challenge 1</span>
 
@@ -220,3 +224,6 @@ ggplot(sdr_data, aes(x = goal_12_score,
       - are there any points that don't follow the trend (outliers)
         
         - which country(s) are outliers?
+        
+Hypotheses:
+From this plot, we can see that there is a strong positive relationship between goal 4 and 7 scores. This shows us that as a country has a higher score for quality education (SDG 4), they tend to also have a higher score for affordable and clean energy (SDG 7). This makes sense because as a country becomes well educated, they may have better knowledge on sustainability topics like clean energy. There are a couple notable outliers like Mongolia and Togo, who have a high SDG 4 scores but low SDG 7 scores. This can be because they choose to have less focus towards clean energy. We also have outliers like Gabon and Sudan, who have mid to low SDG 4 scores and high to mid SDG 7 scores. 
